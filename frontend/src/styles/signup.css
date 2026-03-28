@@ -1,0 +1,34 @@
+/* ===== Signup Specific Styling Only ===== */
+
+/* Prevent full height stretching */
+.main-container {
+  align-items: center;
+}
+
+/* Make signup box slightly wider */
+.login-box {
+  width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Make label and input in same row */
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+.input-group label {
+  width: 130px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+/* Input & Select styling */
+.input-group input,
+.input-group select {
+  flex: 1;
+  height: 40px;
+}

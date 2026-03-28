@@ -1,0 +1,59 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #cbf7b3;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 60px;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #0b3d2e;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+  margin: 0;        /* ✅ removes default ul left margin */
+  padding: 0;       /* ✅ removes default ul left padding */
+  margin-left: auto; /* ✅ pushes entire nav to far right */
+}
+
+.nav-links li {
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links li:hover {
+  color: #00796b;
+}
+
+.nav-links li.active {
+  color: #00796b;
+  font-weight: 600;
+}
+
+.login-btn {
+  padding: 7px 18px;
+  border: none;
+  background: white;
+  color: #00796b;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  background: #e0f2f1;
+}

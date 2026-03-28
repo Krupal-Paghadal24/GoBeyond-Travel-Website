@@ -1,0 +1,157 @@
+
+/* ===== FULL PAGE BACKGROUND ===== */
+.main-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  background: url("../images/bg.jpg") no-repeat center center/cover;
+  font-family: "Segoe UI", sans-serif;
+  /* max-height: 90vh; */
+  overflow-y: auto;
+}
+
+/* ===== LEFT SIDE (FORM BOX) ===== */
+.login-box {
+  width: 420px;
+  margin-left: 80px;
+  align-self: center;
+  padding: 40px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+/* Heading */
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.input-group input,
+.input-group select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Focus Effect */
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 5px #00c6ff;
+}
+
+/* Remember Checkbox */
+.remember {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.remember span {
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #ffffff;
+  color: #2d5c2f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background: #dfffe0;
+  transform: scale(1.02);
+}
+
+/* Links */
+.signUp,
+.SignUp,
+.forgot {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.signUp span,
+.SignUp span {
+  color: #00c6ff;
+  cursor: pointer;
+}
+
+.signUp span:hover,
+.SignUp span:hover {
+  text-decoration: underline;
+}
+
+/* ===== RIGHT SIDE CONTENT ===== */
+.right-content {
+  flex: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 120px;
+}
+
+.right-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.line {
+  width: 150px;
+  height: 4px;
+  background: white;
+  margin: 20px 0;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.social-icons svg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-icons svg:hover {
+  color: #00c6ff;
+  transform: scale(1.2);
+}
+
+/* Brand */
+.brand {
+  font-size: 26px;
+  margin-top: 20px;
+  font-weight: 600;
+}
