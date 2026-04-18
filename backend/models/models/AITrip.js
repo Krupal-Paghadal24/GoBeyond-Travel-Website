@@ -1,45 +1,34 @@
 const mongoose = require("mongoose");
 
-const aiTripSchema = new mongoose.Schema({
+const ActivitySchema = new mongoose.Schema({
+  id:       { type: String },
+  name:     { type: String, required: true },
+  duration: { type: String },
+  type:     { type: String },
+}, { _id: false });
 
-  user_id:{
-    type:mongoose.Schema.Types.ObjectId,
-    ref:"User"
+const DaySchema = new mongoose.Schema({
+  day:        { type: Number, required: true },
+  activities: [ActivitySchema],
+}, { _id: false });
+
+const AITripSchema = new mongoose.Schema({
+  user_id:          { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  prompt_data: {
+    tripType: String,
+    days:     Number,
+    budget:   String,
+    interest: String,
+    region:   String,
   },
+  title:            { type: String },
+  destination:      { type: String },
+  estimated_budget: { type: Number },
+  suggested_days:   { type: Number },        // NEW — ideal days for destination
+  duration_note:    { type: String },        // NEW — AI feedback on selected days
+  itinerary:        [DaySchema],
+  travel_tips:      [String],
+  saved:            { type: Boolean, default: false },
+}, { timestamps: true });
 
-  prompt_data:{
-    tripType:String,
-    days:Number,
-    budget:Number,
-    interest:String,
-    region:String
-  },
-
-  title:String,
-
-  destination:String,
-
-  estimated_budget:Number,
-
-  itinerary:[
-    {
-      day:Number,
-      activities:[String]
-    }
-  ],
-
-  travel_tips:[String],
-
-  created_at:{
-    type:Date,
-    default:Date.now
-  },
-
-  saved:{
-    type:Boolean,
-    default:false
-  }
-
-});
-
-module.exports = mongoose.model("AITrip",aiTripSchema);
+module.exports = mongoose.model("AITrip", AITripSchema);

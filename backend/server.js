@@ -19,7 +19,7 @@ const adminSmartTripRoutes = require("./routes/adminSmartTripRoutes");
 // const adminPaymentRoutes = require("./routes/adminPaymentRoutes");
 const userPaymentRoutes  = require("./routes/userPaymentRoutes");
 const chatbotRoutes = require("./routes/chatbotRoutes");
-
+const couponRoutes = require("./routes/couponRoutes");
 
 const app = express();
 
@@ -44,6 +44,8 @@ app.use("/api",            userTripRoutes);    // ✅ GET /api/trips and GET /ap
 app.use("/api",            userBookingRoutes); // ✅ POST /api/bookings
 app.use("/api",       userPaymentRoutes);   // user saves payment after checkout
 app.use("/api/chatbot", chatbotRoutes);
+app.use("/api", couponRoutes);
+
 
 
 // ===== ADMIN ROUTES =====
