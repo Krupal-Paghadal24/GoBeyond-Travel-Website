@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const Trip = require("../models/Trip");
-const { verifyToken } = require("../middleware/authMiddleware");
-router.use(verifyToken);
 /* ================= GET ALL TRIPS (User) ================= */
 
 router.get("/trips", async (req, res) => {
