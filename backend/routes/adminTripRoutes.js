@@ -3,8 +3,8 @@ const router = express.Router();
 
 const tripController = require("../controllers/admin/tripController");
 const upload = require("../middleware/upload");
-
-
+const { verifyToken, requireAdmin } = require("../middleware/authMiddleware");
+router.use(verifyToken, requireAdmin);
 /* ================= ADD TRIP ================= */
 /* Upload multiple images */
 

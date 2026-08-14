@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User"); // ✅ path is correct (used at /api/admin level)
-
-
+const { verifyToken, requireAdmin } = require("../middleware/authMiddleware");
+router.use(verifyToken, requireAdmin);
 /* ================= GET ALL USERS ================= */
 
 router.get("/users", async (req, res) => {

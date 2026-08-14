@@ -1,8 +1,8 @@
 const express = require("express");
 const router  = express.Router();
 const AITrip  = require("../models/AITrip");
-
-
+const { verifyToken, requireAdmin } = require("../middleware/authMiddleware");
+router.use(verifyToken, requireAdmin);
 /* ================= GET ALL AI TRIPS (ADMIN) ================= */
 
 router.get("/smart-trips", async (req, res) => {

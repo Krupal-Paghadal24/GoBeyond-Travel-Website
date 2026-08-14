@@ -60,13 +60,13 @@ exports.login = async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid Email" });
+    if (!user) return res.status(400).json({ message: "Invalid email or password" });
 
     if (!user.isActive)
       return res.status(403).json({ message: "Account blocked. Contact admin." });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ message: "Invalid Password" });
+    if (!isMatch) return res.status(400).json({ message: "Invalid email or password" });
 
     // ✅ FIXED: JWT secret now from .env instead of hardcoded "secretkey"
     const token = jwt.sign(

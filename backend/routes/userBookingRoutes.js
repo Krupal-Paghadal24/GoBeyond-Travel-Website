@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Booking = require("../models/Booking");
-
+const { verifyToken } = require("../middleware/authMiddleware");
+router.use(verifyToken);
 /* ================= CREATE BOOKING ================= */
 
 router.post("/bookings", async (req, res) => {

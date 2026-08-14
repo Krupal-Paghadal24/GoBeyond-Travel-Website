@@ -10,7 +10,8 @@ const {
   sendBookingConfirmation,
   sendFirstBookingDiscount,
 } = require("../utils/emailService");
-
+const { verifyToken } = require("../middleware/authMiddleware");
+router.use(verifyToken);
 // POST /api/payments  — save payment + booking + send email + give discount
 router.post("/payments", async (req, res) => {
   try {

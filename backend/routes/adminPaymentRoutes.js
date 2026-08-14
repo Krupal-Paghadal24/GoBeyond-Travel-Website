@@ -1,8 +1,8 @@
 const express = require("express");
 const router  = express.Router();
 const Payment = require("../models/Payment");
-
-
+const { verifyToken, requireAdmin } = require("../middleware/authMiddleware");
+router.use(verifyToken, requireAdmin);
 /* ================= GET ALL PAYMENTS (ADMIN) ================= */
 
 router.get("/payments", async (req, res) => {
