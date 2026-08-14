@@ -16,9 +16,12 @@
 3. Run backend: npm start
 4. Run frontend: npm start
 
-## Future Improvements
-- Authentication (JWT)
-- Payment integration
-- Cloud deployment
+## Features
+- JWT authentication with role-based access (user/admin)
+- AI-powered trip planning (Groq + OpenAI)
+- Razorpay payment integration
+- Admin dashboard: manage trips, users, bookings, payments, guides
+- Coupon system
+- Chatbot support
 
 > Note: This project is under active development
