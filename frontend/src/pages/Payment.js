@@ -16,7 +16,6 @@ function Payment() {
   const travelDate = stateData.travelDate || "";
   const isAITrip   = stateData.isAITrip || queryParams.get("aiTrip") === "true";
   const aiTripName = stateData.tripName || queryParams.get("tripName") || "";
-  const aiTripId   = stateData.tripId || queryParams.get("tripId") || "";
   const baseAmount = stateData.amount || (trip ? trip.price : 0) || Number(queryParams.get("amount") || 0);
 
   // ── Price calculation ──────────────────────────────────
@@ -45,7 +44,7 @@ function Payment() {
 
   const banks = ["SBI","HDFC","ICICI","Axis","Kotak","PNB","BOB","Canara"];
 
-  // Fetch user coupons
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (user._id) {
       API.get(`/api/payments/coupons/${user._id}`)

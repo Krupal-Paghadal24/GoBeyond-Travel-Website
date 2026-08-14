@@ -37,7 +37,7 @@ function SmartTrips() {
   const budgets  = ["Low","Mid","High","Luxury"];
   const groups   = ["Solo","Couple","Small Group","Large Group"];
 
-  // Fetch user coupons on load
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (user._id) {
       API.get(`/api/payments/coupons/${user._id}`)
