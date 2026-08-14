@@ -3,6 +3,8 @@ const router   = express.Router();
 const Booking  = require("../models/Booking");
 const User     = require("../models/User");
 const { sendBookingApproved } = require("../utils/emailService");
+const { verifyToken, requireAdmin } = require("../middleware/authMiddleware");
+router.use(verifyToken, requireAdmin);
 
 // GET /api/admin/bookings
 router.get("/bookings", async (req, res) => {
