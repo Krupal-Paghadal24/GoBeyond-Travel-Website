@@ -44,13 +44,13 @@ function Payment() {
 
   const banks = ["SBI","HDFC","ICICI","Axis","Kotak","PNB","BOB","Canara"];
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (user._id) {
       API.get(`/api/payments/coupons/${user._id}`)
-        .then(res => setCoupons(res.data))
-        .catch(() => {});
+      .then(res => setCoupons(res.data))
+      .catch(() => {});
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // ── Apply coupon ───────────────────────────────────────
